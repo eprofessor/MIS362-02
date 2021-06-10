@@ -17,6 +17,12 @@
     <!-- course constant file that contains semester, class, section pages -->
     <script src="../../ReadOnly/CourseConstants.js"></script>
 
+	<style type="text/css">
+		.auto-style1 {
+			width: 708px;
+		}
+	</style>
+
 </head>
 
 <body onload="setVariables()">
@@ -87,13 +93,16 @@
 
             <p>
                 <a href="RaspberryPi3BPlus.png" class="img-responsive img-rounded" target="popup" onclick="window.open('RaspberryPi3BPlus.png', 'popup'); return false;">
-                    <img src="RaspberryPi3BPlus.png" width="300" alt="Raspberry Pi 3 B+" class="img-responsive img-responsive" /></a>Raspberry Pi 3 B+
+                    <img src="RaspberryPi3BPlus.png" width="300" alt="Raspberry Pi 3 B+" class="img-responsive img-responsive" />
+                </a>
+                <br />Raspberry Pi 3 B+
             </p>
 
 
             <p>
                 These instructions will show you how to download and create the operating system for a Raspberry Pi single-board computer (SBC); and then start up the device.<br />
                 SBCs are becoming ubiquitous-examples are <a href="https://store.google.com/us/magazine/compare_thermostats?hl=en-US" class="bg-info text-white" target="_blank">Nest thermostats</a> and <a href="https://shop.ring.com/pages/doorbell-cameras" class="bg-info text-white" target="_blank">Ring doorbells</a>.<br />
+                These devices make up the Internet of Things-IoT, which is greatly impacting organizations and everyday life.<br />
                 In later assignments you will continue working with and experiencing the capabilities of the Raspberry Pi.
             </p>
             <p>After completing this assignment you will be able to:</p>
@@ -117,6 +126,8 @@
         <div id="Overview" class="collapse in  col-lg-12">
             This assignment reviews basic computer concepts that you will need in this course and throughout your career.
             <br />
+            Somsen 301 makes use of a Raspberry Pi 3 B+. <br />
+            Please use a 16GB class 10 (or better) microSD card for these assignments.
             <p>
                 You are expected to have a working knowledge of SBC hardware and software.<br />
                 If you do not understand how to use an item, perform a Google Search, 
@@ -125,7 +136,9 @@
 
             <p>
                 <a href="RPi3Pinout.png" class="img-responsive img-rounded" target="popup" onclick="window.open('RPi3Pinout.png', 'popup'); return false;">
-                    <img src="RPi3Pinout.png" width="300" alt="Raspberry Pi 3" class="img-responsive img-responsive" /></a>Raspberry Pi 3 B+
+                    <img src="RPi3Pinout.png" width="300" alt="Raspberry Pi 3" class="img-responsive img-responsive" />
+                </a>
+                Raspberry Pi 3 B+
             </p>
 
             <hr />
@@ -138,41 +151,31 @@
         <div id="Exercise01" class="collapse in  col-lg-12">
             <ol>
                 <li>These steps are performed on your laptop.<br />
-                    Note the required files (Raspbian image, Balena Etcher) are available on the WSU network at 
-                    <code>\\mispgp\RaspberryPiAndSoftwareImages\</code><br />
-                    Save the Raspberry Pi image file to your Downloads folder. Do NOT place it in your OneDrive folder.  That will cause problems, as it is a large (1.1GB) file.
-                    <p>
+                    Download the required files (Raspbian image, Raspberry Pi Imager) from the WSU network at 
+                    <code>\\mispgp\RaspberryPiAndSoftwareImages\</code> to your <code> Downloads</code> folder<br />
+                    or obtain this software from Professor Paulson&#39;s OneDrive ReadOnly folder, <a href="https://mnscu-my.sharepoint.com/:f:/g/personal/wp8798rh_minnstate_edu/Ellwjc3DXPdBlFO2tO9Wp-gBHfqOYdgSjDwVxdjZnsoVnQ?e=9IixBd">RaspberryPiAndSoftwareImages</a>
+
+                    <hr />
+                    Alternatively you can obtain the software at these websites:<br />
+                    Raspberry Pi Imager: <a href="https://www.raspberrypi.org/software/">https://www.raspberrypi.org/software/</a><br />
+                    Raspbian Operating System: <a href="https://www.raspberrypi.org/downloads/raspbian/" class="bg-info text-white" target="_blank">https://www.raspberrypi.org/downloads/raspbian/</a>.<br />
+                    VNC Viewer:
+                                        <a href="https://www.realvnc.com/en/connect/download/viewer/">https://www.realvnc.com/en/connect/download/viewer/</a>&nbsp;
+                                        <p>
+                        <a href="RaspbianWithDesktop.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('RaspbianWithDesktop.PNG', 'popup'); return false;">
+                            <img src="RaspberryPiImager.png" width="300" alt="Rasbian with desktop" class="img-responsive img-responsive" /></a> Raspbian Pi Imager
+                    </p>
+
+                    <hr />
+
+                    Save the Raspberry Pi image file to your Downloads folder. Do NOT place it in any OneDrive folder or sub folder.  That will cause problems, as it is a large (1.6GB) file. <p>
                         <a href="Software.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('Software.PNG', 'popup'); return false;">
                             <img src="Software.PNG" width="300" alt="Required software" class="img-responsive img-responsive" /></a> Required Software
                     </p>
                 <hr />
                 </li>
 
-                <li>Or you can open a browser to: <a href="https://www.balena.io/etcher/" class="bg-info text-white" target="_blank">https://www.balena.io/etcher/ </a></li>
-
-                <li>Download and save Etcher to your ' 
-                <code>Downloads</code>
-                    ' folder.<br />
-                </li>
-
-                <li>Use File Explorer, find the Etcher install file, and double-click to install Etcher.</li>
-
-                <li>Open a browser to: <a href="https://www.raspberrypi.org/downloads/raspbian/" class="bg-info text-white" target="_blank">https://www.raspberrypi.org/downloads/raspbian/</a>.<br />
-                </li>
-
-                <li>Download the latest ZIP file of the Raspbian Operating System with desktop<br />
-                    <p>
-                        <a href="RaspbianWithDesktop.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('RaspbianWithDesktop.PNG', 'popup'); return false;">
-                            <img src="RaspbianWithDesktop.PNG" width="300" alt="Rasbian with desktop" class="img-responsive img-responsive" /></a> Raspbian With Desktop
-                    </p>
-                <hr />
-                </li>
-
-
-                <li>Save the ZIP file to your  ' 
-                <code>Downloads</code>
-                    ' folder, and choose<strong> Extract&gt;Extract all</strong> from the menu.<br />
-                </li>
+                <li>Use File Explorer, find the Imager install file, and double-click to install Raspberry Pi Imager.</li>
 
             </ol>
             <hr />
@@ -189,20 +192,22 @@
             <ol>
                 <li>These steps are performed on your laptop.</li>
 
-                <li>Install the microSD card into the microSD card slot on the right side of your laptop.<br />
+                <li>Install the microSD card into a USB or USB-C reader and plug into your laptop.<br />
+                    <p>
+                        <a href="USBreaders.jpg" class="img-responsive img-rounded" target="popup" onclick="window.open('USBreaders.jpg', 'popup'); return false;">
+                            <img src="USBreaders.jpg" width="300" alt="flash raspbian to microSD" class="img-responsive img-responsive" /></a>Flash Raspbian to microSD<br />
+                    </p>
                 </li>
 
-                <li>Newer laptops without microSD slots will need to see the professor or a TA to get a microSD card reader.</li>
-
-                <li>Open Etcher and make sure it recognizes the microSD card.<br />
-                    If Etcher does not appear, you will need to restart your laptop.</li>
-                <li>Select the ZIP file downloaded earlier and Drag and Drop it into etcher where it says &#39;Select Image&#39;.<br />
+                <li>Open Imager and make sure it recognizes the microSD card under &quot;Choose Storage&quot;.<br />
+                    If Imager does not appear, you will need to restart your laptop.</li>
+                <li>Select &quot;Choose OS&quot; and scroll to the bottom until you see &quot;Use Custom&quot;. Select &quot;Use Custom&quot; and select your Raspbian Image from your Downloads folder. <br />
                     <p>
                         <a href="FlashMicroSD.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('FlashMicroSD.PNG', 'popup'); return false;">
                             <img src="FlashMicroSD.PNG" width="300" alt="flash raspbian to microSD" class="img-responsive img-responsive" /></a>Flash Raspbian to microSD<br />
                     </p>
                 </li>
-                <li>Press the Flash button. The process will take several minutes.</li>
+                <li>Press the Write button. The process will take several minutes.</li>
                 <li>After the microSD is flashed, open File Explorer on your laptop, navigate to the D: drive, labeled &#39;boot&#39;.<br />
                     This is the microSD card.<br />
                     Right-click and choose &#39;New&gt;Text Document&#39;</li>
@@ -230,7 +235,7 @@
                     <br />
                     Plug them into the Pi at your station. </li>
 
-                <li>Once the flash is complete, remove the microSD card and put it into the Pi.<br />
+                <li>Once the flash is complete and verified, remove the microSD card and put it into the Pi.<br />
                     <p>
                         <a href="InsertMicroSD.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('howtoInsertMicroSD.Pdf', 'popup'); return false;">
                             <img src="InsertMicroSD.PNG" width="100" alt="install microSD into Pi" class="img-responsive img-responsive" /></a>Installing microSD into the Pi<br />
@@ -299,30 +304,19 @@
 
         <div id="Exercise04" class="collapse in  col-lg-12">
 
-            <p>Install Leafpad if it is not already installed.<br />
-               Install scrot (short for <strong>SCR</strong>een sh<strong>OT</strong>) to take screen shots that document your work, if it is not already installed.<br />
+            <p>Mousepad is the text editor.<br />
+                Scrot (short for <strong>SCR</strong>een sh<strong>OT</strong>) takes screen shots that document your work.<br />
             </p>
 
             <ol>
                 <li>On the Raspberry Pi open a terminal window.</li>
 
-                <li>In the Terminal window type <code>sudo apt-get install leafpad</code><br />
-                    Press Enter and the installation will begin.
-                </li>
-
-                <li>In the Terminal window type <code>sudo apt-get install scrot</code><br />
-                    Press Enter and the installation will begin.
-                </li>
-
-                <li>After scrot is installed, in the Terminal window type <code>scrot -h</code><br />
-                    This brings up information on how to use scrot.<br />
-                    Review this information.<br />
-                    <p>
-                        <a href="scrot.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('scrot.PNG', 'popup'); return false;">
-                            <img src="scrot.PNG" width="300" alt="scrot help" class="img-responsive img-responsive" /></a>scrot help
+                <li>In the Terminal window type <code>scrot -h</code><br />This brings up information on how to use scrot.<br />Review this information.<br />
+					<p>
+						<a href="scrot.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('scrot.PNG', 'popup'); return false;">
+						<img src="scrot.PNG" width="300" alt="scrot help" class="img-responsive img-responsive" /></a>scrot help
                     </p>
-                    <br />
-
+					<br />
                 </li>
 
                 <li>Note that simply typing <code>scrot</code> in a Terminal window takes a screen shot and stores it in the   Raspberry Pi&#39;s&nbsp; &#39;/home/pi&#39; folder.<br />
@@ -332,7 +326,9 @@
                     </p>
                 </li>
 
-                <li>To open Leafpad, from the toolbar select Pi&gt;Accessories&gt;Text Editor (if there are two, select the lower one), and create a file that contains only your name in 72 point font.</li>
+                <li>Open Mousepad, from the toolbar select Pi&gt;Accessories&gt;Text Editor.</li>
+				<li>From the menu select Edit&gt;Preferences and uncheck the box &#39;Use system monospace font&#39; to allow the displayed font size to change.</li>
+				<li>&nbsp;Create a file that contains only your name in 72 point font, center it on the screen, and add white space as appropriate-see the image below.</li>
                 <li>In the terminal window type in 
                     <code>scrot -s</code> (scrot select)
                     then click and drag the mouse to select an area around your name in the text file.<br />
@@ -405,7 +401,7 @@
         <div class="col-lg-12 text-primary">
             (10) 2. Assignment submission<br />
             <!-- Enter your answer in the VALUE field below   GROK -->
-            <input class="form-control" name="q2" type="text" id="q2" value="I have completed all the exercises, and uploaded my screenshot to the D2L Assignment folder IOTP01.">
+            <input class="auto-style1" name="q2" type="text" id="q2" value="I have completed all the exercises, and uploaded my screenshot to the D2L Assignment folder IOTP01.">
             <hr />
         </div>
 
